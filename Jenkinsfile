@@ -14,7 +14,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/evf1981/maven-test.git'
             }
         }
-        stage (Sonarqube scan) {
+        stage ("Sonarqube scan") {
           steps{
           withSonarQubeEnv('sonar'){
         sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=evf1981_geolocation2'
